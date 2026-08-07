@@ -188,7 +188,7 @@ describe('Arithmetic', function () {
                     done();
                 });
         });
-        it('divides by zero', function (done) {
+        it('divides a positive float by an integer', function (done) {
             request.get('/arithmetic?operation=divide&operand1=0.5&operand2=2')
                 .expect(200)
                 .end(function (err, res) {

@@ -1,15 +1,7 @@
 'use strict';
 
-exports.calculate = function(req, res) {
-  req.app.use(function(err, _req, res, next) {
-    if (res.headersSent) {
-      return next(err);
-    }
-
-    res.status(400);
-    res.json({ error: err.message });
-  });
-
+exports.calculate = function(req, res, next) {
+  try {
   // TODO: Add operator
   var operations = {
     'add':      function(a, b) { return Number(a) + Number(b) },
@@ -41,4 +33,7 @@ exports.calculate = function(req, res) {
   }
 
   res.json({ result: operation(req.query.operand1, req.query.operand2) });
+  } catch (err) {
+    next(err);
+  }
 };
