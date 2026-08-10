@@ -14,7 +14,7 @@ Follow these steps to spin up a Codespace instance using the `devcontainer` file
 
 ### Step 1: Navigate to Your Repository
 
-1. Go to your repository on GitHub. In this case, navigate to [qldgov-sandbox/copilot-node-calculator](https://github.com/qldgov-sandbox/copilot-node-calculator).
+1. Go to this repository on GitHub. In this case, navigate to [copilot-workshops/copilot-node-calculator](https://github.com/insight-apac-demo/copilot-node-calculator-lab.git).
 
 ### Step 2: Open Codespaces
 
