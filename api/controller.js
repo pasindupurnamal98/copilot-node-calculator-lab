@@ -1,5 +1,9 @@
 'use strict';
 
+/**
+ * Validates a query-string operand as a number, including decimal, negative,
+ * and exponential notation, and reports which operand was invalid.
+ */
 function validateOperand(name, value) {
   if (!value ||
       !value.match(/^(-)?[0-9\.]+(e(-)?[0-9]+)?$/) ||
@@ -8,9 +12,13 @@ function validateOperand(name, value) {
   }
 }
 
+/**
+ * Handles GET /arithmetic requests by validating the selected operation and
+ * operands, executing the operation, and returning the result as JSON.
+ */
 exports.calculate = function(req, res, next) {
   try {
-  // TODO: Add operator
+  // Operations receive query-string values and return a numeric result.
   var operations = {
     'add':      function(a, b) { return Number(a) + Number(b) },
     'subtract': function(a, b) { return a - b },
