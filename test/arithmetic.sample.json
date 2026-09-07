@@ -1,0 +1,110 @@
+[
+  {
+    "operation": "add",
+    "operand1": "21",
+    "operand2": "21",
+    "expected": 42
+  },
+  {
+    "operation": "add",
+    "operand1": "-5.5",
+    "operand2": "2.5",
+    "expected": -3
+  },
+  {
+    "operation": "add",
+    "operand1": "1.2e-5",
+    "operand2": "1.2e-5",
+    "expected": 0.000024
+  },
+  {
+    "operation": "subtract",
+    "operand1": "42",
+    "operand2": "21",
+    "expected": 21
+  },
+  {
+    "operation": "subtract",
+    "operand1": "21",
+    "operand2": "-42",
+    "expected": 63
+  },
+  {
+    "operation": "subtract",
+    "operand1": "5.5",
+    "operand2": "2.25",
+    "expected": 3.25
+  },
+  {
+    "operation": "multiply",
+    "operand1": "21",
+    "operand2": "2",
+    "expected": 42
+  },
+  {
+    "operation": "multiply",
+    "operand1": "-3.5",
+    "operand2": "2",
+    "expected": -7
+  },
+  {
+    "operation": "multiply",
+    "operand1": "4.2e1",
+    "operand2": "1e0",
+    "expected": 42
+  },
+  {
+    "operation": "divide",
+    "operand1": "42",
+    "operand2": "2",
+    "expected": 21
+  },
+  {
+    "operation": "divide",
+    "operand1": "21",
+    "operand2": "-42",
+    "expected": -0.5
+  },
+  {
+    "operation": "divide",
+    "operand1": "0.5",
+    "operand2": "2",
+    "expected": 0.25
+  },
+  {
+    "operation": "percentage",
+    "operand1": "5",
+    "operand2": "10",
+    "expected": 0.5
+  },
+  {
+    "operation": "percentage",
+    "operand1": "50",
+    "operand2": "20",
+    "expected": 10
+  },
+  {
+    "operation": "percentage",
+    "operand1": "12.5",
+    "operand2": "80",
+    "expected": 10
+  },
+  {
+    "operation": "power",
+    "operand1": "2",
+    "operand2": "3",
+    "expected": 8
+  },
+  {
+    "operation": "power",
+    "operand1": "42",
+    "operand2": "0",
+    "expected": 1
+  },
+  {
+    "operation": "power",
+    "operand1": "2.5",
+    "operand2": "2",
+    "expected": 6.25
+  }
+]
