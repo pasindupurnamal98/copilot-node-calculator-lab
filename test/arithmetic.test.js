@@ -130,6 +130,33 @@ describe('Arithmetic', function () {
         });
     });
 
+    describe('Percentage', function () {
+        it('calculates five percent of ten', function (done) {
+            request.get('/arithmetic?operation=percentage&operand1=5&operand2=10')
+                .expect(200)
+                .end(function (err, res) {
+                    expect(res.body).to.eql({ result: 0.5 });
+                    done();
+                });
+        });
+        it('calculates fifty percent of twenty', function (done) {
+            request.get('/arithmetic?operation=percentage&operand1=50&operand2=20')
+                .expect(200)
+                .end(function (err, res) {
+                    expect(res.body).to.eql({ result: 10 });
+                    done();
+                });
+        });
+        it('calculates a decimal percentage', function (done) {
+            request.get('/arithmetic?operation=percentage&operand1=12.5&operand2=80')
+                .expect(200)
+                .end(function (err, res) {
+                    expect(res.body).to.eql({ result: 10 });
+                    done();
+                });
+        });
+    });
+
     describe('Multiplication', function () {
         it('multiplies two positive integers', function (done) {
             request.get('/arithmetic?operation=multiply&operand1=21&operand2=2')
