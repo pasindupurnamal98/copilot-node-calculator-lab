@@ -1,5 +1,13 @@
 'use strict';
 
+function validateOperand(name, value) {
+  if (!value ||
+      !value.match(/^(-)?[0-9\.]+(e(-)?[0-9]+)?$/) ||
+      value.replace(/[-0-9e]/g, '').length > 1) {
+    throw new Error("Invalid " + name + ": " + value);
+  }
+}
+
 exports.calculate = function(req, res, next) {
   try {
   // TODO: Add operator
@@ -22,17 +30,8 @@ exports.calculate = function(req, res, next) {
     throw new Error("Invalid operation: " + req.query.operation);
   }
 
-  if (!req.query.operand1 ||
-      !req.query.operand1.match(/^(-)?[0-9\.]+(e(-)?[0-9]+)?$/) ||
-      req.query.operand1.replace(/[-0-9e]/g, '').length > 1) {
-    throw new Error("Invalid operand1: " + req.query.operand1);
-  }
-
-  if (!req.query.operand2 ||
-      !req.query.operand2.match(/^(-)?[0-9\.]+(e(-)?[0-9]+)?$/) ||
-      req.query.operand2.replace(/[-0-9e]/g, '').length > 1) {
-    throw new Error("Invalid operand2: " + req.query.operand2);
-  }
+  validateOperand('operand1', req.query.operand1);
+  validateOperand('operand2', req.query.operand2);
 
   res.json({ result: operation(req.query.operand1, req.query.operand2) });
   } catch (err) {
